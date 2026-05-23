@@ -44,7 +44,7 @@ do
     test $Uline -eq 1 && ((Uline=Uline+1)) && continue
     echo "$i"
     grep "$i" */Test_Table.tsv | wc -l
-done < Unique.txt
+done < Unique.txt > Unique.debug.txt
 
 # Count appearances of each unique pair across the 100 subsamples
 UAline=1
