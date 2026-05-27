@@ -14,14 +14,14 @@ my_orthologs <- load_orthologs(
   )
 )
 
-# Load overlay table
+# Load overlay table containing the jackknife support values
 overlay_df <- read.table(
     "Unique.Significant.tsv",
     sep = "\t",
     header = FALSE,
     stringsAsFactors = FALSE
 )
-
+# Set the overlay table to equal the oxford dot plot
 colnames(overlay_df) <- c(
     "sp1.Chr",
     "sp2.Chr",
@@ -47,7 +47,7 @@ my_macrosynteny <- compute_macrosynteny(my_orthologs)
 write.table(my_macrosynteny, sep="\t", file="Test_Table.tsv")
 p3 <- plot_macrosynteny(my_macrosynteny)
 
-# Add labels
+# Add the jackknife support values as labels
 p3 <- p3 +
     geom_text(
         data = overlay_df,
@@ -69,7 +69,7 @@ my_orthologs_reordered <- reorder_macrosynteny(my_orthologs)
 my_macrosynteny <- compute_macrosynteny(my_orthologs_reordered)
 p4 <- plot_macrosynteny(my_macrosynteny)
 
-# Add labels
+# Add the jackknife support values as labels
 p4 <- p4 +
     geom_text(
 	data = overlay_df,
