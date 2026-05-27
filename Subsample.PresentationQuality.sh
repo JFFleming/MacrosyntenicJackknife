@@ -6,7 +6,7 @@
 input_file="$1"
 output_prefix="$2"
 
-# Default subsample size = half the number of lines in input_file, rounded up
+# Default subsample size = half the number of pairs in the original table, rounded up, but here is where the argument value subsample size is also set.
 if [ -n "$3" ]; then
     subsample_size="$3"
 else
