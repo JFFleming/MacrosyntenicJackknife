@@ -12,3 +12,8 @@ The scripts contained in here are (in order of intended use):
   - Test_Table.tsv - a tab-separated table of each pair, and whether it was found to be significant by the MacroSyntR Fisher's Exact Test (with the adjusted p-value)
 - DotPlotsWithSupport.r: This RScript is a modificated of the standard MacroSyntR script, intended for use on the original, unsampled dataset. It calculates the Oxford grid and Oxford dot plots as in the original MacroSyntR script, and then takes the information provided in Unique.Significant.tsv to overlay the support values determined by the jackknife analysis.
   
+Provided in the example folder are three files:
+- Bflo.bed
+- Pyes.bed - A list of bed 
+- Bflo_vs_Pyes.tab - A tab-seperated table matching the orthologs in the two bed files
+These are the three core files that form the input for the Macrosyntenic Jackknife. To replace them with your own bed and tab files, change the input values in the R scripts DotPlotsWithSupport.r and TestSignificance.r to the relevant .bed files, and use the appropriate tab file as the input for Subsample.PresentationQuality.sh
