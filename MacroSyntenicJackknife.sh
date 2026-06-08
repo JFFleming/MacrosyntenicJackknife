@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Usage:
-# ./script.sh <input_file> <output_prefix> [subsample_size]
+# ./MacroSyntenicJackknife.sh <input_file> <output_prefix> [subsample_size]
 
 input_file="$1"
 output_prefix="$2"
