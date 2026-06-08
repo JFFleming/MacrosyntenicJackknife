@@ -6,21 +6,21 @@ getwd()
 my_orthologs <- load_orthologs(
   orthologs_table = args[1],
   bedfiles = c(
-    "AdiVag.bed",
-    "Gnatho.bed"
+    "Bflo.bed",
+    "Pyes.bed"
   )
 )
 
 # Draw an oxford grid :
 p1 <- plot_oxford_grid(my_orthologs,
-                       sp1_label = "Adineta",
-                       sp2_label = "Gnathostomulida")
+                       sp1_label = "Branchiostoma",
+                       sp2_label = "Mizuhopecten")
 p1
 
 # Automatically reorder the Oxford grid and color the detected clusters (communities):
 p2 <- plot_oxford_grid(my_orthologs,
-                       sp1_label = "Adineta",
-                       sp2_label = "Gnathostomulida",
+                       sp1_label = "Branchiostoma",
+                       sp2_label = "Mizuhopecten",
                        reorder = TRUE,
                        color_by = "clust")
 p2
